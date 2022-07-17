@@ -4,7 +4,6 @@
       <div class="catalog__top">
         <TitleH1 class="catalog__title" />
         <div class="catalog__selects">
-          <!-- Вернуться сюда чуть позже -->
           <Select class="catalog__selects-item" />
           <Select class="catalog__selects-item" />
           <Select class="catalog__selects-item" />
@@ -19,7 +18,7 @@
 </template>
 
 <script>
-import Select from '@/components/Select'
+import Select from '@/components/Select/index'
 import TitleH1 from '@/components/TitleH1'
 import Search from '../components/Search.vue'
 
@@ -62,7 +61,7 @@ export default {
     display: flex
     align-items: center
     justify-content: center
-    margin-bottom: 18px
+    margin-bottom: unit(18)
     &-item+&-item
       margin-left: unit(25)
 </style>

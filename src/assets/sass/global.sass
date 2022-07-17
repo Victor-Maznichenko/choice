@@ -47,11 +47,24 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     justify-content: center
 
 .close-btn
-    border: 1px solid #26294C
-    border-radius: unit(6)
     position: absolute
-    top: 18px
-    right: 18px
+    top: unit(18)
+    right: unit(18)
+    border: none
+    padding: unit(8) unit(8) unit(7)
+    &::before
+        content: ''
+        z-index: -1
+        position: absolute
+        background-color: rgba(18, 20, 52, 0.98)
+        border: unit(1) solid #26294C
+        border-radius: unit(6)
+        transform: skewX(-8deg)
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+
     img
-        width: unit(10)
-        height: unit(10)
+        width: unit(12)
+        height: unit(12)

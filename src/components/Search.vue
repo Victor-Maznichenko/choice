@@ -19,13 +19,13 @@ export default {
 .search
     display: block
     width: 100%
-    border: 1px solid #26294C
+    border: unit(1) solid #26294C
     padding: unit(11) unit(12)
     display: flex
     align-items: center
     border-radius: unit(6)
     &__ico
-        margin-right: 8px
+        margin-right: unit(8)
         display: block
 
     &__input
