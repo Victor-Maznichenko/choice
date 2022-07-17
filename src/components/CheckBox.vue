@@ -22,7 +22,7 @@
         pointer-events: none
         width: unit(8)
         height: unit(6)
-    &.active
+    &._active
         background: rgb(36,107,253)
         background: -moz-linear-gradient(101deg, rgba(36,107,253,1) 0%, rgba(69,76,244,1) 53%, rgba(89,86,255,1) 100%)
         background: -webkit-linear-gradient(101deg, rgba(36,107,253,1) 0%, rgba(69,76,244,1) 53%, rgba(89,86,255,1) 100%)

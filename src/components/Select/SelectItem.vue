@@ -2,7 +2,7 @@
     <label class="select__container-item">
         <span>Сначала дороже</span>
         <input type="checkbox">
-        <CheckBox class="select__container-checkbox active"/>
+        <CheckBox class="select__container-checkbox _active"/>
     </label>
 </template>
 
