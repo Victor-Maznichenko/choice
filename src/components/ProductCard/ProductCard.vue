@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-parsing-error -->
 <template>
     <div class="card">
         <div class="card__preview">
@@ -8,16 +9,15 @@
         </div>
 
         <div class="card__info">
-            <h4 class="card__title">{{productCard.info.brand}}</h4>
-            <p class="card__model">{{productCard.info.model}}</p>
+            <h4 class="card__title">{{ productCard.info.brand }}</h4>
+            <p class="card__model">{{ productCard.info.model }}</p>
             <div class="card__properties">
-                <CarNumber />
+                <CarNumber :number="productCard.info.number" />
                 <div class="card__properties-color"></div>
-                <div class="card__properties-fuel"></div>
+                <CarFuel :fuel="productCard.info.fuel"/>
             </div>
             <div class="card__btn-wrapper">
-                {{productCard.info.number}}
-                <DefaultButton class="card__btn" :number="number"/>
+                <DefaultButton class="card__btn" />
             </div>
         </div>
     </div>
@@ -26,20 +26,16 @@
 <script>
 import DefaultButton from '@/components/DefaultButton.vue'
 import CarNumber from './CarNumber.vue'
+import CarFuel from './CarFuel.vue'
 
 export default {
     name: 'ProductCard',
     components: {
-        DefaultButton,
-        CarNumber
-    },
-    props: ['productCard'],
-  computed: {
-    number() {
-      // `this` points to the component instance
-      return this.productCard.info.number
-    }
-  }
+    DefaultButton,
+    CarNumber,
+    CarFuel
+},
+    props: ['productCard']
 }
 </script>
 
