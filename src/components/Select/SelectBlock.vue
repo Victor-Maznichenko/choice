@@ -6,8 +6,8 @@
         </div>
         <div class="select__container" v-if="isSelectOpen">
             <div class="select__container-list">
-                <SelectItem/>
-                <SelectItem/>
+                <SelectItem />
+                <SelectItem />
             </div>
         </div>
     </div>
@@ -17,15 +17,15 @@ import SelectItem from './SelectItem.vue'
 
 
 export default {
-  name: 'SelectBlock',
-  components: {
-    SelectItem,
-  },
-  data(){
-    return{
-        isSelectOpen: false
+    name: 'SelectBlock',
+    components: {
+        SelectItem,
+    },
+    data() {
+        return {
+            isSelectOpen: false
+        }
     }
-  }
 }
 </script>
 <style lang="sass">

@@ -4,30 +4,48 @@
       <div class="catalog__top">
         <TitleH1 class="catalog__title" />
         <div class="catalog__selects">
-          <Select class="catalog__selects-item" />
-          <Select class="catalog__selects-item" />
-          <Select class="catalog__selects-item" />
+          <SelectBlock class="catalog__selects-item" />
+          <SelectBlock class="catalog__selects-item" />
+          <SelectBlock class="catalog__selects-item" />
         </div>
         <Search />
       </div>
+      <div class="catalog__items">
+        <div class="catalog__item cart">
+          <div class="cart__preview">
+            <img class="cart__preview-img"
+              src="https://w7.pngwing.com/pngs/536/1009/png-transparent-sports-car-sports-car-lamborghini-car.png"
+              alt="">
+            <span class="cart__preview-status"></span>
+          </div>
+
+          <h4 class="cart__title">Bravado</h4>
+          <p class="cart__model">Buffalo XS Series</p>
+          <div class="cart__properties">
+            <div class="cart__properties-number"></div>
+            <div class="cart__properties-color"></div>
+            <div class="cart__properties-fuel"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <button class="close-btn">
-      <img src="@/assets/images/icons/close.svg" alt="">
-    </button>
+    <CloseBtn />
   </div>
 </template>
 
 <script>
-import Select from '@/components/Select/index'
+import SelectBlock from '@/components/Select/SelectBlock.vue'
 import TitleH1 from '@/components/TitleH1'
 import Search from '../components/Search.vue'
+import CloseBtn from '../components/CloseBtn.vue'
 
 export default {
   name: 'CatalogView',
   components: {
-    Select,
+    SelectBlock,
     TitleH1,
-    Search
+    Search,
+    CloseBtn
   }
 }
 </script>
