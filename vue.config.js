@@ -8,5 +8,7 @@ module.exports = defineConfig({
         additionalData: `@import "@/assets/sass/styles.sass";`,
       },
     },
-  }
+  },
+
+  publicPath: '/choice/'
 })
