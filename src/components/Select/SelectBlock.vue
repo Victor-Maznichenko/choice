@@ -31,6 +31,7 @@ export default {
 <style lang="sass">
 .select
     position: relative
+    z-index: 3
     &__top
         font-size: unit(12)
         color: #8285B4
@@ -48,4 +49,18 @@ export default {
         background: #191B41
         box-shadow: 0 unit(32) unit(32) rgba(0, 0, 0, 0.12)
         border-radius: unit(12)
+        padding: unit(18)
+        width: unit(200)
+        &-item
+            display: flex
+            font-size: unit(14)
+            align-items: center
+            &+&
+                margin-top: unit(20)
+            input
+                width: 0
+                opacity: 0
+                appearance: none
+        &-checkbox
+            margin-left: unit(12)
 </style>

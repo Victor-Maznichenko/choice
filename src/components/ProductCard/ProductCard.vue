@@ -1,10 +1,7 @@
-<!-- eslint-disable vue/no-parsing-error -->
 <template>
     <div class="card">
         <div class="card__preview">
-            <img class="card__preview-img"
-                src="https://w7.pngwing.com/pngs/536/1009/png-transparent-sports-car-sports-car-lamborghini-car.png"
-                alt="">
+            <img class="card__preview-img" :src="require(`@/assets/images/${productCard.preview.ImgName}`)" alt="">
             <span class="card__preview-status"></span>
         </div>
 
