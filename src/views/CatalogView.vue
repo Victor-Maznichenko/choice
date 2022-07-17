@@ -11,7 +11,7 @@
         <Search />
       </div>
       <div class="catalog__items">
-        <ProductCard class="catalog__item" />
+        <ProductCard class="catalog__item" v-for="item in productCards" :key="item.id" :productCard="item" />
       </div>
     </div>
     <CloseBtn />
@@ -36,8 +36,9 @@ export default {
   },
   data() {
     return {
-      productCarts: [
+      productCards: [
         {
+          id: 0,
           preview: {
             type: 'passenger',
             ImgUrl: '@/assets/images/productCart-1.png'
@@ -53,6 +54,7 @@ export default {
           lock: false
         },
         {
+          id: 1,
           preview: {
             type: 'airplane',
             ImgUrl: '@/assets/images/productCart-2.png'
@@ -68,6 +70,7 @@ export default {
           lock: false
         },
         {
+          id: 2,
           preview: {
             type: 'passenger',
             ImgUrl: '@/assets/images/productCart-3.png'
@@ -83,6 +86,7 @@ export default {
           lock: false
         },
         {
+          id: 3,
           preview: {
             type: 'passenger',
             ImgUrl: '@/assets/images/productCart-4.png'
@@ -98,6 +102,7 @@ export default {
           lock: false
         },
         {
+          id: 4,
           preview: {
             type: 'airplane',
             ImgUrl: '@/assets/images/productCart-5.png'
@@ -113,6 +118,7 @@ export default {
           lock: false
         },
         {
+          id: 5,
           preview: {
             type: 'passenger',
             ImgUrl: '@/assets/images/productCart-6.png'

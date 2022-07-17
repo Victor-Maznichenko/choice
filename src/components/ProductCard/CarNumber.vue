@@ -1,9 +1,16 @@
 <template>
     <div class="car-number">
         <span class="car-number__bg"></span>
-        <span class="car-number__text">55DOC720</span>
+        <span class="car-number__text">{{number}}</span>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'CarNumber',
+    props: ['number']
+}
+</script>
 
 <style lang="sass">
 .car-number

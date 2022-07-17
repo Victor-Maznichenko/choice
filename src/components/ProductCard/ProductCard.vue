@@ -8,15 +8,16 @@
         </div>
 
         <div class="card__info">
-            <h4 class="card__title">Bravado</h4>
-            <p class="card__model">Buffalo XS Series</p>
+            <h4 class="card__title">{{productCard.info.brand}}</h4>
+            <p class="card__model">{{productCard.info.model}}</p>
             <div class="card__properties">
                 <CarNumber />
                 <div class="card__properties-color"></div>
                 <div class="card__properties-fuel"></div>
             </div>
             <div class="card__btn-wrapper">
-                <DefaultButton class="card__btn" />
+                {{productCard.info.number}}
+                <DefaultButton class="card__btn" :number="number"/>
             </div>
         </div>
     </div>
@@ -32,7 +33,13 @@ export default {
         DefaultButton,
         CarNumber
     },
-
+    props: ['productCard'],
+  computed: {
+    number() {
+      // `this` points to the component instance
+      return this.productCard.info.number
+    }
+  }
 }
 </script>
 
