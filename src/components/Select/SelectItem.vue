@@ -1,9 +1,9 @@
 <template>
-    <label class="select__container-item">
-        <span>Сначала дороже</span>
-        <input type="checkbox">
-        <CheckBox class="select__container-checkbox _active"/>
-    </label>
+  <label class="select__container-item " :class="selected == optionName ? 'select__container-item_active' : ''">
+    <span>{{ optionName }}</span>
+    <input type="checkbox">
+    <CheckBox v-if="selected == optionName" class="select__container-checkbox _active" />
+  </label>
 </template>
 
 <script>
@@ -13,6 +13,35 @@ export default {
   name: 'SelectItem',
   components: {
     CheckBox
+  },
+  props: {
+    optionName: {
+      type: String,
+      default: 'Параметр пуст'
+    },
+    selected: {
+      type: String,
+    }
   }
 }
 </script>
+
+<style lang="sass">
+.select__container-item
+  display: flex
+  justify-content: space-between
+  font-size: unit(14)
+  cursor: pointer
+  transition: all .15s
+  align-items: center
+  margin-right: unit(30)
+  &+&
+      margin-top: unit(20)
+  input
+      width: 0
+      opacity: 0
+      appearance: none
+  &_active
+    margin-right: 0
+    color: #246BFD
+</style>

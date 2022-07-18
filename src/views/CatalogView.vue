@@ -3,7 +3,7 @@
     <div class="catalog__inner">
       <div class="catalog__top">
         <TitleH1 class="catalog__title" />
-        <SelectBlockList :dataSelects=dataSelects :openSelect="openSelect" />
+        <SelectBlockList :dataSelects=dataSelects :openSelect="openSelect" :optionSelect="optionSelect" />
         <Search />
       </div>
       <div class="catalog__items">
@@ -20,7 +20,7 @@ import TitleH1 from '@/components/TitleH1'
 import Search from '@/components/Search.vue'
 import CloseBtn from '@/components/CloseBtn.vue'
 import ProductCardList from '@/components/ProductCard/ProductCardList.vue'
- 
+
 export default {
   name: 'CatalogView',
   components: {
@@ -36,16 +36,19 @@ export default {
         {
           id: 0,
           options: ['Мой транспорт', 'Чужой транспорт', 'Весь транспорт'],
+          selected: 'Мой транспорт',
           isSelectOpen: false
         },
         {
           id: 1,
           options: ['Любой класс', 'Машина', 'Самолет', 'Вертолет', 'Мотоцикл', 'Квадроцикл'],
+          selected: 'Любой класс',
           isSelectOpen: false
         },
         {
           id: 2,
           options: ['Сначала дороже', 'Сначала дешевле', 'По популярности'],
+          selected: 'Сначала дороже',
           isSelectOpen: false
         }
       ],
@@ -297,6 +300,10 @@ export default {
         }
       });
       this.dataSelects[id].isSelectOpen = !this.dataSelects[id].isSelectOpen
+    },
+    optionSelect(option, id) {
+      this.dataSelects[id].selected = option
+      this.dataSelects[id].isSelectOpen = false
     }
   }
 }

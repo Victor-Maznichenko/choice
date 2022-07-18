@@ -1,7 +1,13 @@
 <template>
     <div class="catalog__selects">
-        <SelectBlock class="catalog__selects-item" v-for="select in dataSelects" :key="select.id" :dataSelect=select
-            v-on:open_select="openSelect" />
+        <SelectBlock 
+        class="catalog__selects-item" 
+        v-for="select in dataSelects" 
+        :key="select.id" 
+        :dataSelect=select
+        @open_select="openSelect"
+        @select="optionSelect"
+         />
     </div>
 </template>
 
@@ -20,6 +26,9 @@ export default {
             type: Object
         },
         openSelect: {
+            type: Function
+        },
+        optionSelect: {
             type: Function
         }
     }

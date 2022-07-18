@@ -1,12 +1,18 @@
 <template>
     <div class="select">
         <div class="select__top" v-on:click="$emit('open_select', dataSelect.id)">
-            <span>{{dataSelect.options[0]}}</span>
+            <span>{{dataSelect.selected}}</span>
             <img src="@/assets/images/icons/arrow-bottom.svg" alt="">
         </div>
         <div class="select__container" v-if="dataSelect.isSelectOpen">
             <div class="select__container-list">
-                <SelectItem v-for="(selectOption, id) in dataSelect.options" :key="id" />
+                <SelectItem 
+                v-for="(selectOption, id) in dataSelect.options" 
+                :key="id"
+                :optionName="selectOption"
+                :selected="dataSelect.selected"
+                @click="sepectOption(selectOption, dataSelect.id)"
+                 />
             </div>
         </div>
     </div>
@@ -20,7 +26,12 @@ export default {
     components: {
         SelectItem,
     },
-    props: ['dataSelect']
+    props: ['dataSelect'],
+    methods: {
+        sepectOption(option, id){
+            this.$emit('select', option, id)
+        }
+    }
 }
 </script>
 <style lang="sass">
@@ -41,21 +52,23 @@ export default {
             height: unit(10)
     &__container
         position: absolute
-        background: #191B41
+        top: calc(100% + unit(13))
+        left: 50%
+        transform: translateX(-50%)
+        background-color: #191B41
         box-shadow: 0 unit(32) unit(32) rgba(0, 0, 0, 0.12)
         border-radius: unit(12)
         padding: unit(18)
-        width: unit(190)
-        &-item
-            display: flex
-            font-size: unit(14)
-            align-items: center
-            &+&
-                margin-top: unit(20)
-            input
-                width: 0
-                opacity: 0
-                appearance: none
+        width: unit(195)
+        &::before
+            content: ''
+            position: absolute
+            top: calc(unit(-6))
+            width: unit(10)
+            height: unit(10)
+            left: 50%
+            transform: translateX(-50%) rotate(45deg)
+            background-color: #191B41
         &-checkbox
             margin-left: unit(12)
 </style>
