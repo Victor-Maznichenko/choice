@@ -3,16 +3,11 @@
     <div class="catalog__inner">
       <div class="catalog__top">
         <TitleH1 class="catalog__title" />
-        <div class="catalog__selects">
-          <SelectBlock class="catalog__selects-item" v-for="select in dataSelects" :key="select.id" :dataSelect=select
-            v-on:open_select="openSelect" />
-        </div>
+        <SelectBlockList :dataSelects=dataSelects :openSelect="openSelect" />
         <Search />
       </div>
       <div class="catalog__items">
-        <div class="catalog__items-list">
-          <ProductCard class="catalog__item" v-for="item in productCards" :key="item.id" :productCard="item" />
-        </div>
+        <ProductCardList :productCards=productCards />
       </div>
     </div>
     <CloseBtn />
@@ -20,20 +15,20 @@
 </template>
 
 <script>
-import SelectBlock from '@/components/Select/SelectBlock.vue'
+import SelectBlockList from '@/components/Select/SelectBlockList.vue'
 import TitleH1 from '@/components/TitleH1'
 import Search from '@/components/Search.vue'
 import CloseBtn from '@/components/CloseBtn.vue'
-import ProductCard from '@/components/ProductCard/ProductCard.vue'
-
+import ProductCardList from '@/components/ProductCard/ProductCardList.vue'
+ 
 export default {
   name: 'CatalogView',
   components: {
-    SelectBlock,
+    SelectBlockList,
     TitleH1,
     Search,
     CloseBtn,
-    ProductCard
+    ProductCardList
   },
   data() {
     return {
