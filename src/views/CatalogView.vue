@@ -4,14 +4,15 @@
       <div class="catalog__top">
         <TitleH1 class="catalog__title" />
         <div class="catalog__selects">
-          <SelectBlock class="catalog__selects-item" />
-          <SelectBlock class="catalog__selects-item" />
-          <SelectBlock class="catalog__selects-item" />
+          <SelectBlock class="catalog__selects-item" v-for="select in dataSelects" :key="select.id" :dataSelect=select
+            v-on:open_select="openSelect" />
         </div>
         <Search />
       </div>
       <div class="catalog__items">
-        <ProductCard class="catalog__item" v-for="item in productCards" :key="item.id" :productCard="item" />
+        <div class="catalog__items-list">
+          <ProductCard class="catalog__item" v-for="item in productCards" :key="item.id" :productCard="item" />
+        </div>
       </div>
     </div>
     <CloseBtn />
@@ -21,8 +22,8 @@
 <script>
 import SelectBlock from '@/components/Select/SelectBlock.vue'
 import TitleH1 from '@/components/TitleH1'
-import Search from '../components/Search.vue'
-import CloseBtn from '../components/CloseBtn.vue'
+import Search from '@/components/Search.vue'
+import CloseBtn from '@/components/CloseBtn.vue'
 import ProductCard from '@/components/ProductCard/ProductCard.vue'
 
 export default {
@@ -36,6 +37,23 @@ export default {
   },
   data() {
     return {
+      dataSelects: [
+        {
+          id: 0,
+          options: ['Мой транспорт', 'Чужой транспорт', 'Весь транспорт'],
+          isSelectOpen: false
+        },
+        {
+          id: 1,
+          options: ['Любой класс', 'Машина', 'Самолет', 'Вертолет', 'Мотоцикл', 'Квадроцикл'],
+          isSelectOpen: false
+        },
+        {
+          id: 2,
+          options: ['Сначала дороже', 'Сначала дешевле', 'По популярности'],
+          isSelectOpen: false
+        }
+      ],
       productCards: [
         {
           id: 0,
@@ -50,7 +68,10 @@ export default {
             number: '55DOC720',
             colors: ['#FF2F2F', '#2B2D49'],
           },
-          textBtn: 'Забрать',
+          btnInfo: {
+            title: 'Забрать',
+            icon: ''
+          },
           lock: false
         },
         {
@@ -66,7 +87,11 @@ export default {
             number: '55DOC720',
             colors: ['#FFCA0D', '#2B2D49'],
           },
-          textBtn: 'Арендовать',
+          btnInfo: {
+            title: 'Арендовать',
+            icon: '',
+            styleWhite: true
+          },
           lock: false
         },
         {
@@ -82,7 +107,11 @@ export default {
             number: '55DOC720',
             colors: ['#50FF33', '#2B2D49'],
           },
-          textBtn: 'Поставить',
+          btnInfo: {
+            title: 'Поставить',
+            icon: '',
+            styleOutline: true
+          },
           lock: false
         },
         {
@@ -98,7 +127,10 @@ export default {
             number: '55DOC720',
             colors: ['#FF2F2F', '#2B2D49'],
           },
-          textBtn: 'Забрать',
+          btnInfo: {
+            title: 'Забрать',
+            icon: ''
+          },
           lock: false
         },
         {
@@ -114,7 +146,10 @@ export default {
             number: '55DOC720',
             colors: ['#FFCA0D', '#2B2D49'],
           },
-          textBtn: 'Заправить',
+          btnInfo: {
+            title: 'Поставить',
+            icon: ''
+          },
           lock: false
         },
         {
@@ -130,7 +165,11 @@ export default {
             number: '55DOC720',
             colors: ['#50FF33', '#2B2D49'],
           },
-          textBtn: 'Поставить',
+          btnInfo: {
+            title: 'Заправить',
+            icon: 'fuel-btn.svg',
+            styleYellow: true
+          },
           lock: false
         },
         {
@@ -146,7 +185,11 @@ export default {
             number: '55DOC720',
             colors: ['#FF2F2F', '#2B2D49'],
           },
-          textBtn: 'Забрать',
+          btnInfo: {
+            title: 'Забрать',
+            icon: '',
+            styleWhite: true
+          },
           lock: false
         },
         {
@@ -162,7 +205,11 @@ export default {
             number: '55DOC720',
             colors: ['#FFCA0D', '#2B2D49'],
           },
-          textBtn: 'Арендовать',
+          btnInfo: {
+            title: 'Арендовать',
+            icon: '',
+            styleOutline: true
+          },
           lock: false
         },
         {
@@ -178,7 +225,10 @@ export default {
             number: '55DOC720',
             colors: ['#50FF33', '#2B2D49'],
           },
-          textBtn: 'Поставить',
+          btnInfo: {
+            title: 'Поставить',
+            icon: ''
+          },
           lock: false
         },
         {
@@ -194,7 +244,11 @@ export default {
             number: '55DOC720',
             colors: ['#FF2F2F', '#2B2D49'],
           },
-          textBtn: 'Забрать',
+          btnInfo: {
+            title: 'Забрать',
+            icon: '',
+            styleWhite: true
+          },
           lock: false
         },
         {
@@ -210,7 +264,11 @@ export default {
             number: '55DOC720',
             colors: ['#FFCA0D', '#2B2D49'],
           },
-          textBtn: 'Заправить',
+          btnInfo: {
+            title: 'Заправить',
+            icon: 'fuel-btn.svg',
+            styleYellow: true
+          },
           lock: false
         },
         {
@@ -226,10 +284,24 @@ export default {
             number: '55DOC720',
             colors: ['#50FF33', '#2B2D49'],
           },
-          textBtn: 'Поставить',
+          btnInfo: {
+            title: 'Поставить',
+            icon: '',
+            styleOutline: true
+          },
           lock: false
         }
       ]
+    }
+  },
+  methods: {
+    openSelect(id) {
+      this.dataSelects.forEach(element => {
+        if (element.id != id) {
+          element.isSelectOpen = false
+        }
+      });
+      this.dataSelects[id].isSelectOpen = !this.dataSelects[id].isSelectOpen
     }
   }
 }

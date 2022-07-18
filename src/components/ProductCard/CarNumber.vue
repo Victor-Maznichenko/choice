@@ -8,7 +8,11 @@
 <script>
 export default {
     name: 'CarNumber',
-    props: ['number']
+    props: {
+        number: {
+            type: String
+        }
+    }
 }
 </script>
 

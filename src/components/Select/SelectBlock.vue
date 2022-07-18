@@ -1,13 +1,12 @@
 <template>
     <div class="select">
-        <div class="select__top" v-on:click="isSelectOpen = !isSelectOpen">
-            <span>НАЗВАНИЕ</span>
+        <div class="select__top" v-on:click="$emit('open_select', dataSelect.id)">
+            <span>{{dataSelect.options[0]}}</span>
             <img src="@/assets/images/icons/arrow-bottom.svg" alt="">
         </div>
-        <div class="select__container" v-if="isSelectOpen">
+        <div class="select__container" v-if="dataSelect.isSelectOpen">
             <div class="select__container-list">
-                <SelectItem />
-                <SelectItem />
+                <SelectItem v-for="(selectOption, id) in dataSelect.options" :key="id" />
             </div>
         </div>
     </div>
@@ -21,11 +20,7 @@ export default {
     components: {
         SelectItem,
     },
-    data() {
-        return {
-            isSelectOpen: false
-        }
-    }
+    props: ['dataSelect']
 }
 </script>
 <style lang="sass">
@@ -50,7 +45,7 @@ export default {
         box-shadow: 0 unit(32) unit(32) rgba(0, 0, 0, 0.12)
         border-radius: unit(12)
         padding: unit(18)
-        width: unit(200)
+        width: unit(190)
         &-item
             display: flex
             font-size: unit(14)

@@ -9,7 +9,11 @@
 <script>
 export default {
     name: 'CarFuel',
-    props: ['fuel']
+    props: {
+        fuel: {
+            type: Number
+        }
+    }
 }
 </script>
 

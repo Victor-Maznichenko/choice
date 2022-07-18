@@ -14,7 +14,14 @@
                 <CarFuel :fuel="productCard.info.fuel"/>
             </div>
             <div class="card__btn-wrapper">
-                <DefaultButton class="card__btn" />
+                <DefaultButton 
+                class="card__btn" 
+                :title="productCard.btnInfo.title" 
+                :styleOutline="productCard.btnInfo.styleOutline"
+                :styleYellow="productCard.btnInfo.styleYellow"
+                :styleWhite="productCard.btnInfo.styleWhite"
+                :icon="productCard.btnInfo.icon"
+                />
             </div>
         </div>
     </div>
@@ -74,6 +81,7 @@ export default {
         text-transform: uppercase
     &__model
         margin-bottom: unit(5)
+        color: #8285B4
     &__properties
         display: flex
         align-items: center
