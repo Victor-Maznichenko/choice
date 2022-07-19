@@ -1,13 +1,13 @@
 <template>
-    <div class="car-number">
-        <span class="car-number__bg"></span>
-        <span class="car-number__text">{{number}}</span>
+    <div class="card-number">
+        <span class="card-number__bg"></span>
+        <span class="card-number__text">{{number}}</span>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'CarNumber',
+    name: 'CardNumber',
     props: {
         number: {
             type: String
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="sass">
-.car-number
+.card-number
     padding: 0 unit(8)
     display: inline-block
     position: relative

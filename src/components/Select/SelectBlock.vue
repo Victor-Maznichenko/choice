@@ -4,7 +4,7 @@
             <span>{{dataSelect.selected}}</span>
             <img src="@/assets/images/icons/arrow-bottom.svg" alt="">
         </div>
-        <div class="select__container" v-if="dataSelect.isSelectOpen">
+        <div class="select__container" v-if="dataSelect.isSelectOpen" :style="cssProps">
             <div class="select__container-list">
                 <SelectItem 
                 v-for="(selectOption, id) in dataSelect.options" 
@@ -26,13 +26,28 @@ export default {
     components: {
         SelectItem,
     },
-    props: ['dataSelect'],
+    props: {
+        dataSelect: {
+            type: Object
+        },
+        containerWidth:{
+            type: String,
+            default: '195'
+        }
+    },
     methods: {
         selectOpen(id){
             this.$emit('open_select', id)
         },
         selectChange(option, id){
             this.$emit('select', option, id)
+        }
+    },
+    computed: {
+        cssProps() {
+            return {
+                '--container_width': this.containerWidth,
+            }
         }
     }
 }
@@ -62,7 +77,7 @@ export default {
         box-shadow: 0 unit(32) unit(32) rgba(0, 0, 0, 0.12)
         border-radius: unit(12)
         padding: unit(18)
-        width: unit(195)
+        width: unit(var(--container_width))
         &::before
             content: ''
             position: absolute

@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: 'CarColour',
+    name: 'CardColour',
     props: {
         colors: {
             type: Object,
@@ -33,12 +33,12 @@ export default {
         $x0: $x1
 
 
-    @return $x1 + px
+    @return unit($x1)
 
 .choose-color
-    width: 14px
-    height: 14px
-    border-radius: 2px
+    width: unit(14)
+    height: unit(14)
+    border-radius: unit(2)
     position: relative
     overflow: hidden
     i
@@ -47,7 +47,7 @@ export default {
         left: 0
         width: 100%
         height: 100%    
-        border-radius: 2px
+        border-radius: unit(2)
         background-color: var(--color_one)
     &._double
         i:last-child

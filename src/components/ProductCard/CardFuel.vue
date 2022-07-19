@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'CarFuel',
+    name: 'CardFuel',
     props: {
         fuel: {
             type: Number

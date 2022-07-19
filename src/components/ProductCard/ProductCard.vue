@@ -1,29 +1,19 @@
 <template>
     <div class="card" :class="className">
-        <div class="card__preview">
-            <i class="card__preview-lock" v-if="productCard.lock"><img src="@/assets/images/icons/lock.svg" alt=""></i>
-            <img class="card__preview-img" :src="require(`@/assets/images/${productCard.preview.ImgName}`)" alt="">
-            <span class="card__preview-status"></span>
-        </div>
-
+        <CardPreview :lock="productCard.lock" :typeName="productCard.preview.typeName" :imgName="productCard.preview.ImgName" />
         <div class="card__info">
             <h4 class="card__title">{{ productCard.info.brand }}</h4>
             <p class="card__model">{{ productCard.info.model }}</p>
             <div class="card__properties">
-                <CarNumber :number="productCard.info.number" />
-                <CarColour :colors="productCard.info.colors" class="card__properties-color" />
-                <CarFuel :fuel="productCard.info.fuel"/>
+                <CardNumber class="card__properties-number" :number="productCard.info.number" />
+                <CardColour class="card__properties-color" :colors="productCard.info.colors" />
+                <CardFuel :fuel="productCard.info.fuel" />
             </div>
             <div class="card__btn-wrapper">
-                <DefaultButton 
-                class="card__btn" 
-                :title="productCard.btnInfo.title" 
-                :styleOutline="productCard.btnInfo.styleOutline"
-                :styleYellow="productCard.btnInfo.styleYellow"
-                :styleWhite="productCard.btnInfo.styleWhite"
-                :disabled="productCard.btnInfo.disabled"
-                :icon="productCard.btnInfo.icon"
-                />
+                <DefaultButton class="card__btn" :title="productCard.btnInfo.title"
+                    :styleOutline="productCard.btnInfo.styleOutline" :styleYellow="productCard.btnInfo.styleYellow"
+                    :styleWhite="productCard.btnInfo.styleWhite" :disabled="productCard.btnInfo.disabled"
+                    :icon="productCard.btnInfo.icon" />
             </div>
         </div>
     </div>
@@ -31,18 +21,20 @@
 
 <script>
 import DefaultButton from '@/components/DefaultButton.vue'
-import CarNumber from './CarNumber.vue'
-import CarFuel from './CarFuel.vue'
-import CarColour from './CarColour.vue'
+import CardNumber from './CardNumber.vue'
+import CardFuel from './CardFuel.vue'
+import CardColour from './CardColour.vue'
+import CardPreview from './CardPreview.vue'
 
 export default {
     name: 'ProductCard',
     components: {
-    DefaultButton,
-    CarNumber,
-    CarFuel,
-    CarColour
-},
+        DefaultButton,
+        CardNumber,
+        CardFuel,
+        CardColour,
+        CardPreview
+    },
     props: {
         productCard: {
             type: Object,
@@ -54,7 +46,7 @@ export default {
     },
     computed: {
         className() {
-            return{
+            return {
                 'card_lock': this.productCard.lock,
             }
         }
@@ -92,23 +84,6 @@ export default {
         position: relative
         z-index: 2
         padding: unit(12) unit(12) unit(16) unit(12)
-    &__preview
-        max-height: unit(118)
-        overflow: hidden
-        border-radius: unit(18) unit(18) 0 0
-        position: relative
-        &-img
-            width: 100%
-        &-lock
-            position: absolute
-            width: 100%
-            height: 100%
-            display: flex
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))
-            align-items: center
-            justify-content: center
-            img
-                display: block
     &__title
         margin-bottom: unit(6)
         text-transform: uppercase
@@ -118,8 +93,11 @@ export default {
     &__properties
         display: flex
         align-items: center
-        justify-content: space-between
         margin-bottom: unit(12)
+        &-number
+            margin-right: unit(10)
+        &-color
+            margin-right: unit(10)
     &__btn
         &-wrapper
             width: 100%

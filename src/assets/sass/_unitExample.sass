@@ -1,4 +1,3 @@
-@use 'sass:math'
 // 1920 / 100
 $ratio: 19.2
 
@@ -8,6 +7,10 @@ html
 
 \:root
     --anchor: 1vw
+
+// @media screen and (max-width: 1920px)
+//     \:root
+//         --anchor: 1.7vh
 
 @function unit($px)
     @return calc(#{$px} * (var(--anchor) / #{$ratio}))

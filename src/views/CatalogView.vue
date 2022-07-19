@@ -56,7 +56,7 @@ export default {
         {
           id: 0,
           preview: {
-            type: 'passenger',
+            typeName: 'passenger',
             ImgName: "productCart-1.png"
           },
           info: {
@@ -75,7 +75,7 @@ export default {
         {
           id: 1,
           preview: {
-            type: 'airplane',
+            typeName: 'airplane',
             ImgName: "productCart-2.png"
           },
           info: {
@@ -95,7 +95,7 @@ export default {
         {
           id: 2,
           preview: {
-            type: 'passenger',
+            typeName: 'passenger',
             ImgName: "productCart-3.png"
           },
           info: {
@@ -115,7 +115,7 @@ export default {
         {
           id: 3,
           preview: {
-            type: 'passenger',
+            typeName: 'helicopter',
             ImgName: "productCart-4.png"
           },
           info: {
@@ -135,7 +135,7 @@ export default {
         {
           id: 4,
           preview: {
-            type: 'airplane',
+            typeName: 'motorbike',
             ImgName: "productCart-5.png"
           },
           info: {
@@ -155,7 +155,7 @@ export default {
         {
           id: 5,
           preview: {
-            type: 'passenger',
+            typeName: 'quadBike',
             ImgName: "productCart-6.png"
           },
           info: {
@@ -175,7 +175,7 @@ export default {
         {
           id: 6,
           preview: {
-            type: 'passenger',
+            typeName: 'passenger',
             ImgName: "productCart-1.png"
           },
           info: {
@@ -195,7 +195,7 @@ export default {
         {
           id: 7,
           preview: {
-            type: 'airplane',
+            typeName: 'airplane',
             ImgName: "productCart-2.png"
           },
           info: {
@@ -215,7 +215,7 @@ export default {
         {
           id: 8,
           preview: {
-            type: 'passenger',
+            typeName: 'passenger',
             ImgName: "productCart-3.png"
           },
           info: {
@@ -235,7 +235,7 @@ export default {
         {
           id: 9,
           preview: {
-            type: 'passenger',
+            typeName: 'passenger',
             ImgName: "productCart-4.png"
           },
           info: {
@@ -255,7 +255,7 @@ export default {
         {
           id: 10,
           preview: {
-            type: 'airplane',
+            typeName: 'airplane',
             ImgName: "productCart-5.png"
           },
           info: {
@@ -275,7 +275,7 @@ export default {
         {
           id: 11,
           preview: {
-            type: 'passenger',
+            typeName: 'passenger',
             ImgName: "productCart-6.png"
           },
           info: {
