@@ -1,6 +1,7 @@
 <template>
-    <div class="card">
+    <div class="card" :class="className">
         <div class="card__preview">
+            <i class="card__preview-lock" v-if="productCard.lock"><img src="@/assets/images/icons/lock.svg" alt=""></i>
             <img class="card__preview-img" :src="require(`@/assets/images/${productCard.preview.ImgName}`)" alt="">
             <span class="card__preview-status"></span>
         </div>
@@ -20,6 +21,7 @@
                 :styleOutline="productCard.btnInfo.styleOutline"
                 :styleYellow="productCard.btnInfo.styleYellow"
                 :styleWhite="productCard.btnInfo.styleWhite"
+                :disabled="productCard.btnInfo.disabled"
                 :icon="productCard.btnInfo.icon"
                 />
             </div>
@@ -41,7 +43,22 @@ export default {
     CarFuel,
     CarColour
 },
-    props: ['productCard']
+    props: {
+        productCard: {
+            type: Object,
+            lock: {
+                type: Boolean,
+                default: false
+            }
+        }
+    },
+    computed: {
+        className() {
+            return{
+                'card_lock': this.productCard.lock,
+            }
+        }
+    }
 }
 </script>
 
@@ -68,6 +85,9 @@ export default {
     &:hover
         &::before
             opacity: 1
+    &_lock
+        pointer-events: none
+
     &__info
         position: relative
         z-index: 2
@@ -76,8 +96,19 @@ export default {
         max-height: unit(118)
         overflow: hidden
         border-radius: unit(18) unit(18) 0 0
+        position: relative
         &-img
             width: 100%
+        &-lock
+            position: absolute
+            width: 100%
+            height: 100%
+            display: flex
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))
+            align-items: center
+            justify-content: center
+            img
+                display: block
     &__title
         margin-bottom: unit(6)
         text-transform: uppercase

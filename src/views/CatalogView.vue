@@ -127,9 +127,10 @@ export default {
           },
           btnInfo: {
             title: 'Забрать',
+            disabled: true,
             icon: ''
           },
-          lock: false
+          lock: true
         },
         {
           id: 4,
@@ -146,9 +147,10 @@ export default {
           },
           btnInfo: {
             title: 'Поставить',
+            disabled: true,
             icon: ''
           },
-          lock: false
+          lock: true
         },
         {
           id: 5,
@@ -225,9 +227,10 @@ export default {
           },
           btnInfo: {
             title: 'Поставить',
+            disabled: true,
             icon: ''
           },
-          lock: false
+          lock: true
         },
         {
           id: 9,
@@ -285,9 +288,10 @@ export default {
           btnInfo: {
             title: 'Поставить',
             icon: '',
+            disabled: true,
             styleOutline: true
           },
-          lock: false
+          lock: true
         }
       ]
     }
