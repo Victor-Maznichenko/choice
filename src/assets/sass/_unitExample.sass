@@ -1,0 +1,13 @@
+@use 'sass:math'
+// 1920 / 100
+$ratio: 19.2
+
+html
+    text-size-adjust: 100%
+    font-family: 'Gotham Pro', sans-serif
+
+\:root
+    --anchor: 1vw
+
+@function unit($px)
+    @return calc(#{$px} * (var(--anchor) / #{$ratio}))
