@@ -2,10 +2,11 @@
   <router-view></router-view>
 </template>
 
+
 <style lang="sass">
 #app
     font-family: 'Gotham Pro'
-    background-image: url('~@/assets/images/bg.jpg')
+    background-image: url('@/assets/images/bg.jpg')
     background-size: cover
     background-position: center right
     height: 100vh

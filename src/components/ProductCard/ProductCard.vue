@@ -1,19 +1,29 @@
 <template>
     <div class="card" :class="className">
-        <CardPreview :lock="productCard.lock" :typeName="productCard.preview.typeName" :imgName="productCard.preview.ImgName" />
+        <CardPreview :lock="productCard.lock" :iconName="productCard.preview.iconName" :imgName="productCard.preview.ImgName" />
+        
         <div class="card__info">
+
             <h4 class="card__title">{{ productCard.info.brand }}</h4>
             <p class="card__model">{{ productCard.info.model }}</p>
+
             <div class="card__properties">
+
                 <CardNumber class="card__properties-number" :number="productCard.info.number" />
                 <CardColour class="card__properties-color" :colors="productCard.info.colors" />
                 <CardFuel :fuel="productCard.info.fuel" />
+
             </div>
             <div class="card__btn-wrapper">
-                <DefaultButton class="card__btn" :title="productCard.btnInfo.title"
-                    :styleOutline="productCard.btnInfo.styleOutline" :styleYellow="productCard.btnInfo.styleYellow"
-                    :styleWhite="productCard.btnInfo.styleWhite" :disabled="productCard.btnInfo.disabled"
-                    :icon="productCard.btnInfo.icon" />
+
+                <DefaultButton class="card__btn" 
+                :title="productCard.btnInfo.title"
+                :styleOutline="productCard.btnInfo.styleOutline" 
+                :styleYellow="productCard.btnInfo.styleYellow"
+                :styleWhite="productCard.btnInfo.styleWhite" 
+                :disabled="productCard.btnInfo.disabled"
+                :icon="productCard.btnInfo.icon" />
+                    
             </div>
         </div>
     </div>

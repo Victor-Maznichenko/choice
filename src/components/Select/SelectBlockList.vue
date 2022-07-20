@@ -4,7 +4,7 @@
         class="catalog__selects-item" 
         v-for="select in dataSelects" 
         :key="select.id" 
-        :dataSelect=select
+        :dataSelect="select"
         @open_select="openSelect"
         @select="optionSelect"
          />

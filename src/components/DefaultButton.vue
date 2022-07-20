@@ -2,7 +2,7 @@
     <button class="default-btn" type="button"
     :class="className"
     >
-        <img class="default-btn__img" v-if="icon" :src="require(`@/assets/images/icons/${icon}`)" alt="">
+        <img class="default-btn__img" v-if="icon" :src="`@/assets/images/icons/${icon}`" alt="">
         <span class="default-btn__text">{{title}}</span>
     </button>
 </template>

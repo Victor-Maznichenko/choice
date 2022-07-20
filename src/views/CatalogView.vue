@@ -3,11 +3,11 @@
     <div class="catalog__inner">
       <div class="catalog__top">
         <TitleH1 class="catalog__title" />
-        <SelectBlockList :dataSelects=dataSelects :openSelect="openSelect" :optionSelect="optionSelect" />
+        <SelectBlockList :dataSelects="dataSelects" :openSelect="openSelect" :optionSelect="optionSelect" />
         <Search />
       </div>
       <div class="catalog__items">
-        <ProductCardList :productCards=productCards />
+        <ProductCardList :productCards="productCards" />
       </div>
     </div>
     <CloseBtn />
@@ -16,7 +16,7 @@
 
 <script>
 import SelectBlockList from '@/components/Select/SelectBlockList.vue'
-import TitleH1 from '@/components/TitleH1'
+import TitleH1 from '@/components/TitleH1.vue'
 import Search from '@/components/Search.vue'
 import CloseBtn from '@/components/CloseBtn.vue'
 import ProductCardList from '@/components/ProductCard/ProductCardList.vue'
@@ -56,7 +56,7 @@ export default {
         {
           id: 0,
           preview: {
-            typeName: 'passenger',
+            iconName: 'passenger',
             ImgName: "productCart-1.png"
           },
           info: {
@@ -75,7 +75,7 @@ export default {
         {
           id: 1,
           preview: {
-            typeName: 'airplane',
+            iconName: 'airplane',
             ImgName: "productCart-2.png"
           },
           info: {
@@ -95,7 +95,7 @@ export default {
         {
           id: 2,
           preview: {
-            typeName: 'passenger',
+            iconName: 'passenger',
             ImgName: "productCart-3.png"
           },
           info: {
@@ -115,7 +115,7 @@ export default {
         {
           id: 3,
           preview: {
-            typeName: 'helicopter',
+            iconName: 'helicopter',
             ImgName: "productCart-4.png"
           },
           info: {
@@ -135,7 +135,7 @@ export default {
         {
           id: 4,
           preview: {
-            typeName: 'motorbike',
+            iconName: 'motorbike',
             ImgName: "productCart-5.png"
           },
           info: {
@@ -155,7 +155,7 @@ export default {
         {
           id: 5,
           preview: {
-            typeName: 'quadBike',
+            iconName: 'quadBike',
             ImgName: "productCart-6.png"
           },
           info: {
@@ -175,7 +175,7 @@ export default {
         {
           id: 6,
           preview: {
-            typeName: 'passenger',
+            iconName: 'passenger',
             ImgName: "productCart-1.png"
           },
           info: {
@@ -195,7 +195,7 @@ export default {
         {
           id: 7,
           preview: {
-            typeName: 'airplane',
+            iconName: 'airplane',
             ImgName: "productCart-2.png"
           },
           info: {
@@ -215,7 +215,7 @@ export default {
         {
           id: 8,
           preview: {
-            typeName: 'passenger',
+            iconName: 'passenger',
             ImgName: "productCart-3.png"
           },
           info: {
@@ -235,7 +235,7 @@ export default {
         {
           id: 9,
           preview: {
-            typeName: 'passenger',
+            iconName: 'passenger',
             ImgName: "productCart-4.png"
           },
           info: {
@@ -255,7 +255,7 @@ export default {
         {
           id: 10,
           preview: {
-            typeName: 'airplane',
+            iconName: 'airplane',
             ImgName: "productCart-5.png"
           },
           info: {
@@ -275,7 +275,7 @@ export default {
         {
           id: 11,
           preview: {
-            typeName: 'passenger',
+            iconName: 'passenger',
             ImgName: "productCart-6.png"
           },
           info: {

@@ -1,20 +1,16 @@
 <template>
     <div class="card__preview">
         <i class="card__preview-lock" v-if="lock"><img src="@/assets/images/icons/lock.svg" alt=""></i>
-        <img class="card__preview-img" :src="require(`@/assets/images/${imgName}`)" alt="">
-        <WidgetMini class="card__preview-status" :imgName="typeName" :transparency="true" :disabled="true" />
+        <img class="card__preview-img" :src="imageSrc(imgName)" alt="">
+        <WidgetMini class="card__preview-status" :iconName="iconName" :transparency="true" :disabled="true" />
         <div class="card__preview-options">
-            <WidgetMini class="card__preview-option" :imgName="typeName" />
-            <WidgetMini class="card__preview-option" :imgName="typeName" />
-            <WidgetMini class="card__preview-option" :imgName="typeName" />
-            <WidgetMini class="card__preview-option" :imgName="typeName" />
-            <WidgetMini class="card__preview-option" :imgName="typeName" :active="true" />
         </div>
     </div>
 </template>
 
 <script>
-import WidgetMini from '@/components/WidgetMini.vue';
+import WidgetMini from '@/components/WidgetMini.vue'
+
 export default {
     name: "CardPreview",
     props: {
@@ -24,15 +20,20 @@ export default {
         imgName: {
             type: String
         },
-        typeName: {
+        iconName: {
             type: String
         }
     },
-    components: { WidgetMini }
+    components: {WidgetMini},
+    methods: {
+        imageSrc(imgName) {
+            return(new URL(`../../assets/images/${imgName}`, import.meta.url).href)
+        }
+    }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .card__preview
     max-height: unit(118)
     overflow: hidden
