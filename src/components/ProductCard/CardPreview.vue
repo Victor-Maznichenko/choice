@@ -2,6 +2,7 @@
     <div class="card__preview">
         <i class="card__preview-lock" v-if="lock"><img src="@/assets/images/icons/lock.svg" alt=""></i>
         <img class="card__preview-img" :src="imageSrc">
+        <WidgetMiniVue class="card__preview-status" :disabled="true" :transparency="true" :iconName="iconName" />
         <div class="card__preview-options">
         </div>
     </div>
@@ -9,6 +10,7 @@
 
 <script>
 import { computed } from 'vue'
+import WidgetMiniVue from '../WidgetMini.vue'
 
 
 export default {
@@ -19,8 +21,12 @@ export default {
         },
         imgName: {
             type: String
+        },
+        iconName: {
+            type: String
         }
     },
+    components: { WidgetMiniVue },
     setup(props) {
         const imageSrc = computed(() => {
             return new URL(`../../assets/images/transport/${props.imgName}.png`, import.meta.url).href

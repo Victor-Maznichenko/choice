@@ -167,7 +167,7 @@ export default {
           },
           btnInfo: {
             title: 'Заправить',
-            icon: 'fuel-btn.svg',
+            icon: 'fuel-btn',
             styleYellow: true
           },
           lock: false
@@ -267,7 +267,7 @@ export default {
           },
           btnInfo: {
             title: 'Заправить',
-            icon: 'fuel-btn.svg',
+            icon: 'fuel-btn',
             styleYellow: true
           },
           lock: false

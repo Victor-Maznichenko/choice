@@ -1,6 +1,6 @@
 <template>
     <div class="widget" :class="className" v-if="iconName">
-
+        <component :is="icon" class="widget__icon"></component>
         <div class="widget__message">
             Транспорт на штрафстоянке (на транспорт выписан заказ на эвакуацию)
         </div>
@@ -8,9 +8,13 @@
 </template>
 
 <script>
+import { computed, defineAsyncComponent } from 'vue'
+
 
 
 export default {
+
+
     name: 'WidgetMini',
     props: {
         iconName: {
@@ -37,6 +41,14 @@ export default {
                 'widget_position-bottom': this.positionBottom
             }
         }
+    },
+    setup(props) {
+        const icon = computed(() => {
+            return defineAsyncComponent(() => import(`@/assets/images/icons/${props.iconName}.svg?component`));
+        })
+        return {
+            icon
+        }
     }
 }
 </script>
@@ -50,9 +62,10 @@ export default {
     display: flex
     align-items: center
     justify-content: center
-    &__img
-        width: 75%
-        height: 85%
+    &__icon
+        width: 80%
+        height: 80%
+        display: block
     &_transparency
         background: rgba(0, 0, 0, 0.4)
     &__message
