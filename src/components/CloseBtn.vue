@@ -1,6 +1,6 @@
 <template>
     <button class="close-btn">
-        <CloseIcon />
+        <CloseIcon class="close-btn__icon" />
     </button>
 </template>
 
@@ -36,7 +36,7 @@ export default {
         top: 0
         left: 0
 
-    img
+    &__icon
         display: block
         width: unit(12)
         height: unit(12)

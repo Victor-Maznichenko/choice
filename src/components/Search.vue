@@ -1,13 +1,16 @@
 <template>
     <label class="search">
-        <img class="search__img" src="@/assets/images/icons/search.svg" alt="">
+        <SearchIcon class="search__img" />
         <input class="search__input" type="search" placeholder="Поиск">
     </label>
 </template>
 
 <script>
+import SearchIcon from '@/assets/images/icons/search.svg?component'
+
 export default {
-  name: 'SearchBlock'
+  name: 'SearchBlock',
+  components: {SearchIcon}
 }
 </script>
 
