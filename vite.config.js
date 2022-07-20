@@ -1,11 +1,20 @@
 import { fileURLToPath, URL } from "url";
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import svgLoader from 'vite-svg-loader'
 
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [vue()],
+    plugins: [
+        vue(), 
+        svgLoader({
+            svgoConfig: {
+                multipass: true,
+                svgo: false
+            }
+        }),
+    ],
     resolve: {
         alias: {
             find: /^@\/(.+)/,
@@ -16,8 +25,10 @@ export default defineConfig({
         devSourcemap: true,
         preprocessorOptions: {
             sass: {
-                additionalData: `@use "@/assets/sass/unitExample" as *\n@use "@/assets/sass/fonts"\n@use "@/assets/sass/global"`,
+                additionalData: `@use "@/assets/sass/styles.sass" as *`,
             },
         },
     },
+
+    publicPath: '/choice/'
 });

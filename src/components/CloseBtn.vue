@@ -1,14 +1,25 @@
 <template>
     <button class="close-btn">
-      <img src="@/assets/images/icons/close.svg" alt="">
+        <CloseIcon />
     </button>
 </template>
+
+<script>
+import CloseIcon from '@/assets/images/icons/close.svg';
+
+export default {
+    components: {
+        CloseIcon
+    },
+};
+</script>
 
 <style lang="sass">
 .close-btn
     position: absolute
     top: unit(18)
     right: unit(18)
+    font-size: 0
     border: none
     padding: unit(8) unit(7)
     outline: none

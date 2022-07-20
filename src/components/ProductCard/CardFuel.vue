@@ -1,14 +1,21 @@
 <template>
     <div class="fuel">
-        <img class="fuel__img" src="@/assets/images/icons/thereIsNotFuel.svg" alt="" v-if="fuel == 0">
-        <img class="fuel__img" src="@/assets/images/icons/thereIsFuel.svg" alt="" v-if="fuel > 0">
+        <ThereIsNotFuel class="fuel__img" v-if="fuel == 0" />
+        <ThereIsHalfFuel class="fuel__img" v-if="650 > fuel && fuel > 0" />
+        <ThereIsFuel class="fuel__img" v-if="fuel > 650" />
         <span class="fuel__count"><b>{{fuel}}</b>/999</span>
     </div>
 </template>
 
 <script>
+import ThereIsNotFuel from '@/assets/images/icons/thereIsNotFuel.svg?component'
+import ThereIsHalfFuel from '@/assets/images/icons/thereIsHalfFuel.svg?component'
+import ThereIsFuel from '@/assets/images/icons/thereIsFuel.svg?component'
+
+
 export default {
     name: 'CardFuel',
+    components: {ThereIsNotFuel, ThereIsHalfFuel, ThereIsFuel},
     props: {
         fuel: {
             type: Number
@@ -23,7 +30,7 @@ export default {
     align-items: center
     &__img
         display: block
-        width: unit(13)
+        width: unit(14)
         height: unit(14)
         margin-right: unit(6)
     &__count

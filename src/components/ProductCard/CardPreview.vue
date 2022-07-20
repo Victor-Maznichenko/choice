@@ -1,15 +1,15 @@
 <template>
     <div class="card__preview">
         <i class="card__preview-lock" v-if="lock"><img src="@/assets/images/icons/lock.svg" alt=""></i>
-        <img class="card__preview-img" :src="imageSrc(imgName)" alt="">
-        <WidgetMini class="card__preview-status" :iconName="iconName" :transparency="true" :disabled="true" />
+        <img class="card__preview-img" :src="imageSrc">
         <div class="card__preview-options">
         </div>
     </div>
 </template>
 
 <script>
-import WidgetMini from '@/components/WidgetMini.vue'
+import { computed } from 'vue'
+
 
 export default {
     name: "CardPreview",
@@ -19,21 +19,21 @@ export default {
         },
         imgName: {
             type: String
-        },
-        iconName: {
-            type: String
         }
     },
-    components: {WidgetMini},
-    methods: {
-        imageSrc(imgName) {
-            return(new URL(`../../assets/images/${imgName}`, import.meta.url).href)
+    setup(props) {
+        const imageSrc = computed(() => {
+            return new URL(`../../assets/images/transport/${props.imgName}.png`, import.meta.url).href
+        })
+
+        return {
+            imageSrc
         }
     }
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .card__preview
     max-height: unit(118)
     overflow: hidden

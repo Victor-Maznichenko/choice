@@ -57,7 +57,7 @@ export default {
           id: 0,
           preview: {
             iconName: 'passenger',
-            ImgName: "productCart-1.png"
+            ImgName: "productCard-1"
           },
           info: {
             brand: 'Bravado',
@@ -76,7 +76,7 @@ export default {
           id: 1,
           preview: {
             iconName: 'airplane',
-            ImgName: "productCart-2.png"
+            ImgName: "productCard-2"
           },
           info: {
             brand: 'Western',
@@ -96,7 +96,7 @@ export default {
           id: 2,
           preview: {
             iconName: 'passenger',
-            ImgName: "productCart-3.png"
+            ImgName: "productCard-3"
           },
           info: {
             brand: 'Nagasaki',
@@ -116,7 +116,7 @@ export default {
           id: 3,
           preview: {
             iconName: 'helicopter',
-            ImgName: "productCart-4.png"
+            ImgName: "productCard-4"
           },
           info: {
             brand: 'Bravado',
@@ -136,7 +136,7 @@ export default {
           id: 4,
           preview: {
             iconName: 'motorbike',
-            ImgName: "productCart-5.png"
+            ImgName: "productCard-5"
           },
           info: {
             brand: 'Western',
@@ -156,7 +156,7 @@ export default {
           id: 5,
           preview: {
             iconName: 'quadBike',
-            ImgName: "productCart-6.png"
+            ImgName: "productCard-6"
           },
           info: {
             brand: 'Nagasaki',
@@ -176,7 +176,7 @@ export default {
           id: 6,
           preview: {
             iconName: 'passenger',
-            ImgName: "productCart-1.png"
+            ImgName: "productCard-1"
           },
           info: {
             brand: 'Bravado',
@@ -196,7 +196,7 @@ export default {
           id: 7,
           preview: {
             iconName: 'airplane',
-            ImgName: "productCart-2.png"
+            ImgName: "productCard-2"
           },
           info: {
             brand: 'Western',
@@ -216,7 +216,7 @@ export default {
           id: 8,
           preview: {
             iconName: 'passenger',
-            ImgName: "productCart-3.png"
+            ImgName: "productCard-3"
           },
           info: {
             brand: 'Nagasaki',
@@ -236,7 +236,7 @@ export default {
           id: 9,
           preview: {
             iconName: 'passenger',
-            ImgName: "productCart-4.png"
+            ImgName: "productCard-4"
           },
           info: {
             brand: 'Bravado',
@@ -256,7 +256,7 @@ export default {
           id: 10,
           preview: {
             iconName: 'airplane',
-            ImgName: "productCart-5.png"
+            ImgName: "productCard-5"
           },
           info: {
             brand: 'Western',
@@ -276,7 +276,7 @@ export default {
           id: 11,
           preview: {
             iconName: 'passenger',
-            ImgName: "productCart-6.png"
+            ImgName: "productCard-6"
           },
           info: {
             brand: 'Nagasaki',

@@ -29,10 +29,8 @@ export default {
     $x0: 1
     $x1: $x0
     @for $i from 1 through 10 
-        $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0)
+        $x1: calc($x0 - ($x0 * $x0 - abs($r)) / (2 * $x0))
         $x0: $x1
-
-
     @return unit($x1)
 
 .choose-color

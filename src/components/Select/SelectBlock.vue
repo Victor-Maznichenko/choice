@@ -2,7 +2,7 @@
     <div class="select">
         <div class="select__top" v-on:click="selectOpen(dataSelect.id)">
             <span>{{dataSelect.selected}}</span>
-            <img src="@/assets/images/icons/arrow-bottom.svg" alt="">
+            <ArrowBottomIcon class="select__top-icon" />
         </div>
         <div class="select__container" v-if="dataSelect.isSelectOpen" :style="cssProps">
             <div class="select__container-list">
@@ -19,12 +19,14 @@
 </template>
 <script>
 import SelectItem from './SelectItem.vue'
+import ArrowBottomIcon from '@/assets/images/icons/arrow-bottom.svg?component'
 
 
 export default {
     name: 'SelectBlock',
     components: {
         SelectItem,
+        ArrowBottomIcon
     },
     props: {
         dataSelect: {
@@ -65,9 +67,10 @@ export default {
         align-items: center
         span
             margin-right: unit(4)
-        img
+        &-icon
             width: unit(10)
             height: unit(10)
+            display: block
     &__container
         position: absolute
         top: calc(100% + unit(13))
