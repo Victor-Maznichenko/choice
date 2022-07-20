@@ -1,7 +1,5 @@
 <template>
-    <div class="widget" :class="className" v-if="imgName">
-
-        <Icon class="widget__img" :iconName="imgName"/>
+    <div class="widget" :class="className" v-if="iconName">
 
         <div class="widget__message">
             Транспорт на штрафстоянке (на транспорт выписан заказ на эвакуацию)
@@ -10,12 +8,12 @@
 </template>
 
 <script>
-import Icon from '@/components/Icon'
+
 
 export default {
     name: 'WidgetMini',
     props: {
-        imgName: {
+        iconName: {
             type: String
         },
         transparency: {
@@ -30,9 +28,6 @@ export default {
             type: Boolean,
             default: false
         }
-    },
-    components: {
-        Icon
     },
     computed: {
         className() {
